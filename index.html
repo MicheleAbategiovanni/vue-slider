@@ -19,7 +19,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="pause" @mouseleave="start">
 
                 <div class="item">
                     <img :src="slides[currentIndex].image" alt="Spiderman">
@@ -33,7 +33,8 @@
                     <div class="prev" @click="goPrevImg"></div>
                     <div class="next" @click="goNextImg"></div>
 
-                    <div v-for="(image, i) in slides" class="thumb" @click="onThumbnailClick(i)" :class="(i === currentIndex) ? 'active' : ''">
+                    <div v-for="(image, i) in slides" class="thumb" @click="onThumbnailClick(i)"
+                        :class="(i === currentIndex) ? 'active' : ''">
                         <img :src="slides[i].image" alt="Svezia" />
                     </div>
 

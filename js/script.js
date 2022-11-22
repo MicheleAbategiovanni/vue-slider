@@ -56,15 +56,25 @@ createApp({
             this.currentIndex = clickedImageIndex;
         },
 
+        start() {
+            clearInterval(this.timerId);
+            this.timerId = setInterval(() => {
+                if (this.currentIndex === this.slides.length - 1) {
+                    this.currentIndex = 0;
+                } else {
+                    this.currentIndex++;
+                }
+            }, 3000);
+        },
+
+        pause() {
+            clearInterval(this.timerId);
+            this.status = 'Paused';
+        },
+
     },
     mounted() {
-        setInterval(() => {
-            if (this.currentIndex === this.slides.length - 1) {
-                this.currentIndex = 0;
-            } else {
-                this.currentIndex++;
-            }
-        }, 3000);
+        this.start();
     }
 
 }).mount('#app');
