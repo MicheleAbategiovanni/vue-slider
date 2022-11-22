@@ -52,9 +52,9 @@ createApp({
             }
         },
 
-        onThumbnailClick (clickedImageIndex) {
+        onThumbnailClick(clickedImageIndex) {
             this.currentIndex = clickedImageIndex;
-          },
+        },
 
     }
 }).mount('#app');
