@@ -50,7 +50,11 @@ createApp({
             } else {
                 this.currentIndex--;
             }
-        }
+        },
+
+        onThumbnailClick (clickedImageIndex) {
+            this.currentIndex = clickedImageIndex;
+          },
 
     }
 }).mount('#app');
