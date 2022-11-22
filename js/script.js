@@ -56,5 +56,15 @@ createApp({
             this.currentIndex = clickedImageIndex;
         },
 
+    },
+    mounted() {
+        setInterval(() => {
+            if (this.currentIndex === this.slides.length - 1) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex++;
+            }
+        }, 3000);
     }
+
 }).mount('#app');
