@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-
+            currentIndex: 0,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -32,10 +32,25 @@ createApp({
                 },
             ],
 
-            currentIndex: 1,
         }
     },
     methods: {
+
+        goNextImg() {
+            if (this.currentIndex === this.slides.length - 1) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex++;
+            }
+        },
+
+        goPrevImg() {
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.slides.length - 1
+            } else {
+                this.currentIndex--;
+            }
+        }
 
     }
 }).mount('#app');
